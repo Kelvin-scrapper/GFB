@@ -1,0 +1,29 @@
+# GFB Data Processing Pipeline Requirements
+# German Federal Budget Data Extraction Dependencies
+
+# Core data processing libraries
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Excel file handling
+openpyxl>=3.1.0
+
+# Web automation and downloading
+selenium>=4.15.0
+undetected-chromedriver>=3.5.0
+requests>=2.31.0
+
+# Date and time utilities (included in standard library)
+# datetime - built-in
+# os - built-in  
+# pathlib - built-in
+# subprocess - built-in
+# argparse - built-in
+# sys - built-in
+
+# Optional: For enhanced Excel formatting (if needed)
+xlsxwriter>=3.0.0
+
+# Development and testing (optional)
+pytest>=7.0.0
+pytest-cov>=4.0.0
