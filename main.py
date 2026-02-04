@@ -46,13 +46,19 @@ def download_excel_from_website(url, download_folder="./downloads", search_keywo
     }
     options.add_experimental_option("prefs", prefs)
     
+    driver = None
     try:
-        driver = uc.Chrome(options=options)
+        driver = uc.Chrome(options=options, version_main=144, use_subprocess=False)
     except Exception as e:
         print(f"Failed with options, trying basic setup: {e}")
-        options = uc.ChromeOptions()
-        options.add_argument("--headless")
-        driver = uc.Chrome(options=options)
+        try:
+            options = uc.ChromeOptions()
+            options.add_argument("--headless")
+            driver = uc.Chrome(options=options, version_main=144, use_subprocess=False)
+        except Exception as e2:
+            print(f"Also failed with basic setup: {e2}")
+            print("Trying without version specification...")
+            driver = uc.Chrome(options=options, use_subprocess=False)
     
     try:
         print(f"Going to website: {url}")
@@ -93,10 +99,12 @@ def download_excel_from_website(url, download_folder="./downloads", search_keywo
         return None
         
     finally:
-        try:
-            driver.quit()
-        except:
-            pass
+        if driver is not None:
+            try:
+                driver.quit()
+            except Exception as e:
+                # Ignore cleanup errors
+                pass
 
 def find_excel_download_buttons(driver, search_keywords):
     """

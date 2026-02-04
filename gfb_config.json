@@ -1,0 +1,1099 @@
+{
+  "version": "1.0",
+  "created": "2026-02-04T14:37:33.891062",
+  "source_file": "schuldenbericht_en.xlsx",
+  "borrowing_sheet": {
+    "name": "rpgBorrowing",
+    "date_row": 13,
+    "date_column_start": 1,
+    "measures": [
+      {
+        "code": "GFB.BORR.FINBUDGET.LOANFIN.M",
+        "description": " Financing Federal budget, special funds; loan financing FMS & ESF",
+        "search_patterns": [
+          "Financing Federal budget, special funds.*loan financing",
+          "Finanzierungsbedarf.*Bundeshaushalt.*Sondervermögen.*Darlehensfin"
+        ],
+        "source_row": 14,
+        "source_label": "Financing Federal budget, special funds; loan financing FMS & ESF"
+      },
+      {
+        "code": "GFB.BORR.FINBUDGET.M",
+        "description": "Gross Borrowing Requirement: Financing Federal budget and special funds",
+        "search_patterns": [
+          "^Financing Federal budget and special funds",
+          "^Finanzierungsbedarf Bundeshaushalt und Sondervermögen"
+        ],
+        "source_row": 15,
+        "source_label": "Financing Federal budget and special funds"
+      },
+      {
+        "code": "GFB.BORR.BREAKPURP.M",
+        "description": "Gross Borrowing Requirement: Breakdown by purpose",
+        "search_patterns": [
+          "^Breakdown by purpose",
+          "^Gliederung nach Zweck"
+        ],
+        "source_row": 16,
+        "source_label": "Breakdown by purpose"
+      },
+      {
+        "code": "GFB.BORR.FEDBUDGET.M",
+        "description": "Gross Borrowing Requirement: Federal budget",
+        "search_patterns": [
+          "^\\s*Federal budget\\s*$",
+          "^\\s*Bundeshaushalt\\s*$"
+        ],
+        "source_row": 17,
+        "source_label": "Federal budget"
+      },
+      {
+        "code": "GFB.BORR.FINMARKETFUND.M",
+        "description": "Gross Borrowing Requirement: Financial Market Stabilisation Fund",
+        "search_patterns": [
+          "Financial Market Stabilisation Fund",
+          "Finanzmarktstabilisierungsfonds"
+        ],
+        "source_row": 18,
+        "source_label": "Financial Market Stabilisation Fund"
+      },
+      {
+        "code": "GFB.BORR.FMSLOANEXP.M",
+        "description": "Gross Borrowing Requirement: FMS loans for expenses acc. to section 9 (1)  StFG",
+        "search_patterns": [
+          "FMS loans for expenses.*section 9.*1",
+          "FMS-Darlehen für Ausgaben.*§ 9.*1"
+        ],
+        "source_row": 19,
+        "source_label": "FMS loans for expenses acc. to section 9 (1)  StFG"
+      },
+      {
+        "code": "GFB.BORR.FMSLOANWINDAGE.M",
+        "description": "Gross Borrowing Requirement: FMS loans for wind-up agencies acc. to section 9 (5)  StFG",
+        "search_patterns": [
+          "FMS loans for wind-up agencies.*section 9.*5",
+          "FMS-Darlehen für Abwicklungsanstalten.*§ 9.*5"
+        ],
+        "source_row": 20,
+        "source_label": "FMS loans for wind-up agencies acc. to section 9 (5)  StFG"
+      },
+      {
+        "code": "GFB.BORR.INVREDFUND.M",
+        "description": "Gross Borrowing Requirement: Investment and Redemption Fund",
+        "search_patterns": [
+          "Investment and Redemption Fund",
+          "Investitions- und Tilgungsfonds"
+        ],
+        "source_row": 21,
+        "source_label": "Investment and Redemption Fund"
+      },
+      {
+        "code": "GFB.BORR.ECONSTABFUND.M",
+        "description": "Gross Borrowing Requirement: Economic Stabilisation Fund",
+        "search_patterns": [
+          "^Economic Stabilisation Fund\\s*$",
+          "^Wirtschaftsstabilisierungsfonds\\s*$"
+        ],
+        "source_row": 22,
+        "source_label": "Economic Stabilisation Fund"
+      },
+      {
+        "code": "GFB.BORR.ESFLOANRECAPMEAS.M",
+        "description": "Gross Borrowing Requirement: ESF loans for recapitalisation measures acc. to section 22 StFG",
+        "search_patterns": [
+          "ESF loans for recapitalisation.*section 22",
+          "WSF-Darlehen für Rekapitalisierung.*§ 22"
+        ],
+        "source_row": 23,
+        "source_label": "ESF loans for recapitalisation measures acc. to section 22 StFG"
+      },
+      {
+        "code": "GFB.BORR.ESFLOANKFW23.M",
+        "description": "Gross Borrowing Requirement: ESF loans for KfW acc. to section 23 StFG",
+        "search_patterns": [
+          "ESF loans for KfW.*section 23",
+          "WSF-Darlehen an KfW.*§ 23"
+        ],
+        "source_row": 24,
+        "source_label": "ESF loans for KfW acc. to section 23 StFG"
+      },
+      {
+        "code": "GFB.BORR.ESFLOANENERGCRIS.M",
+        "description": "Gross Borrowing Requirement: ESF loans to mitigate consequences of the energy crisis acc. to sect. 26a (1) no. 1-4 StFG",
+        "search_patterns": [
+          "ESF loans.*energy crisis.*26a.*1.*1-4",
+          "WSF-Darlehen.*Energiekrise.*26a.*1.*1-4"
+        ],
+        "source_row": 25,
+        "source_label": "ESF loans to mitigate consequences of the energy crisis acc. to sect. 26a (1) no. 1-4 StFG"
+      },
+      {
+        "code": "GFB.BORR.ESFLOANKFW26.M",
+        "description": "Gross Borrowing Requirement: ESF loans to KfW acc. to section 26a (1) no 5 StFG",
+        "search_patterns": [
+          "ESF loans to KfW.*section 26a.*1.*5",
+          "WSF-Darlehen an KfW.*§ 26a.*1.*5"
+        ],
+        "source_row": 26,
+        "source_label": "ESF loans to KfW acc. to section 26a (1) no 5 StFG"
+      },
+      {
+        "code": "GFB.BORR.SPECFUNDBUND.M",
+        "description": "Gross Borrowing Requirement: Special Fund for the Bundeswehr",
+        "search_patterns": [
+          "Special Fund for the Bundeswehr",
+          "Sondervermögen Bundeswehr"
+        ],
+        "source_row": 27,
+        "source_label": "Special Fund for the Bundeswehr"
+      },
+      {
+        "code": "GFB.BORR.RESTRFUND.M",
+        "description": "Gross Borrowing Requirement: Restructuring Fund",
+        "search_patterns": [
+          "^Restructuring Fund\\s*$",
+          "^Restrukturierungsfonds\\s*$"
+        ],
+        "source_row": 29,
+        "source_label": "Restructuring Fund"
+      },
+      {
+        "code": "GFB.BORR.HARDCOALEQFUND.M",
+        "description": "Gross Borrowing Requirement: Hard Coal Equalisation Fund",
+        "search_patterns": [
+          "Hard Coal Equalisation Fund",
+          "Steinkohlefinanzierungsfonds"
+        ],
+        "source_row": 30,
+        "source_label": "Hard Coal Equalisation Fund"
+      },
+      {
+        "code": "GFB.BORR.FEDRAILFUND.M",
+        "description": "Gross Borrowing Requirement: Federal Railways Fund",
+        "search_patterns": [
+          "Federal Railways Fund",
+          "Bundeseisenbahnvermögen"
+        ],
+        "source_row": 31,
+        "source_label": "Federal Railways Fund"
+      },
+      {
+        "code": "GFB.BORR.COMPFUND.M",
+        "description": "Gross Borrowing Requirement: Compensation Fund",
+        "search_patterns": [
+          "^Compensation Fund\\s*$",
+          "^Ausgleichsfonds\\s*$"
+        ],
+        "source_row": 32,
+        "source_label": "Compensation Fund"
+      },
+      {
+        "code": "GFB.BORR.REDFUNDLIAB.M",
+        "description": "Gross Borrowing Requirement: Redemption Fund for Inherited Liabilities",
+        "search_patterns": [
+          "Redemption Fund for Inherited Liabilities",
+          "Erblastentilgungsfonds"
+        ],
+        "source_row": 33,
+        "source_label": "Redemption Fund for Inherited Liabilities"
+      },
+      {
+        "code": "GFB.BORR.ERPSPECFUND.M",
+        "description": "Gross Borrowing Requirement: ERP Special Fund",
+        "search_patterns": [
+          "ERP Special Fund",
+          "ERP-Sondervermögen"
+        ],
+        "source_row": 34,
+        "source_label": "ERP Special Fund"
+      },
+      {
+        "code": "GFB.BORR.GERUNITFUND.M",
+        "description": "Gross Borrowing Requirement: German Unity Fund",
+        "search_patterns": [
+          "German Unity Fund",
+          "Fonds Deutsche Einheit"
+        ],
+        "source_row": 35,
+        "source_label": "German Unity Fund"
+      },
+      {
+        "code": "GFB.BORR.EQUALBURFUND.M",
+        "description": "Gross Borrowing Requirement: Equalisation of Burdens Fund",
+        "search_patterns": [
+          "Equalisation of Burdens Fund",
+          "Lastenausgleichsfonds"
+        ],
+        "source_row": 36,
+        "source_label": "Equalisation of Burdens Fund"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type",
+        "search_patterns": [
+          "^Breakdown by debt type\\s*$",
+          "^Gliederung nach Schuldarten\\s*$"
+        ],
+        "source_row": 37,
+        "source_label": "Breakdown by debt type"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.FEDSEC.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: Federal securities",
+        "search_patterns": [
+          "^\\s*Federal securities\\s*$",
+          "^\\s*Bundeswertpapiere\\s*$"
+        ],
+        "source_row": 38,
+        "source_label": "Federal securities"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.CONVFEDSEC.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: Conventional Federal securities",
+        "search_patterns": [
+          "Conventional Federal securities",
+          "Konventionelle Bundeswertpapiere"
+        ],
+        "source_row": 39,
+        "source_label": "Conventional Federal securities"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.FEDBOND.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: Federal bonds",
+        "search_patterns": [
+          "^\\s*Federal bonds\\s*$",
+          "^\\s*Bundesanleihen\\s*$"
+        ],
+        "source_row": 40,
+        "source_label": "Federal bonds"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.30YFEDBOND.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: 30-year Federal bonds",
+        "search_patterns": [
+          "30-year Federal bonds",
+          "30-jährige Bundesanleihen"
+        ],
+        "source_row": 41,
+        "source_label": "30-year Federal bonds"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.15YFEDBOND.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: 15-year Federal bonds",
+        "search_patterns": [
+          "15-year Federal bonds",
+          "15-jährige Bundesanleihen"
+        ],
+        "source_row": 42,
+        "source_label": "15-year Federal bonds"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.10YFEDBOND.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: 10-year Federal bonds",
+        "search_patterns": [
+          "10-year Federal bonds",
+          "10-jährige Bundesanleihen"
+        ],
+        "source_row": 43,
+        "source_label": "10-year Federal bonds"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.7YFEDBOND.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: 7-year Federal bonds",
+        "search_patterns": [
+          "7-year Federal bonds",
+          "7-jährige Bundesanleihen"
+        ],
+        "source_row": 44,
+        "source_label": "7-year Federal bonds"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.FEDNOTE.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: Federal notes",
+        "search_patterns": [
+          "^\\s*Federal notes\\s*$",
+          "^\\s*Bundesobligationen\\s*$"
+        ],
+        "source_row": 45,
+        "source_label": "Federal notes"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.FEDTREASNOTE.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: Federal Treasury notes",
+        "search_patterns": [
+          "Federal Treasury notes",
+          "Bundesschatzanweisungen"
+        ],
+        "source_row": 46,
+        "source_label": "Federal Treasury notes"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.TREASDISCPAP.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: Treasury discount paper",
+        "search_patterns": [
+          "Treasury discount paper",
+          "Unverzinsliche Schatzanweisungen"
+        ],
+        "source_row": 47,
+        "source_label": "Treasury discount paper"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.INFFEDSEC.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: Inflation-linked Federal securities",
+        "search_patterns": [
+          "Inflation-linked Federal securities",
+          "Inflationsindexierte Bundeswertpapiere"
+        ],
+        "source_row": 48,
+        "source_label": "Inflation-linked Federal securities"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.GREENFEDSEC.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: Green Federal securities",
+        "search_patterns": [
+          "Green Federal securities",
+          "Grüne Bundeswertpapiere"
+        ],
+        "source_row": 49,
+        "source_label": "Green Federal securities"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.SUPSECFEDGOV.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: Supplementary securities issued by the federal government",
+        "search_patterns": [
+          "Supplementary securities issued by the federal government",
+          "Ergänzungswertpapiere des Bundes"
+        ],
+        "source_row": 50,
+        "source_label": "Supplementary securities issued by the federal government"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.LOANSUPFEDGOV.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: Loans from suppl. issues by the federal government for the ESF acc. to sect. 26b StFG",
+        "search_patterns": [
+          "Loans from suppl.*federal government for the ESF.*26b",
+          "Darlehen aus Ergänzungsemissionen.*WSF.*26b"
+        ],
+        "source_row": 51,
+        "source_label": "Loans from suppl. issues by the federal government for the ESF acc. to sect. 26b StFG"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.ESFINVFEDGOVSEC.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: ESF investment in federal government securities acc. to sect. 26b (5) StFG",
+        "search_patterns": [
+          "ESF investment in federal government securities.*26b.*5",
+          "WSF-Anlage in Bundeswertpapieren.*26b.*5"
+        ],
+        "source_row": 52,
+        "source_label": "ESF investment in federal government securities acc. to sect. 26b (5) StFG"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.OTHERFEDSEC.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: Other Federal securities",
+        "search_patterns": [
+          "Other Federal securities",
+          "Sonstige Bundeswertpapiere"
+        ],
+        "source_row": 53,
+        "source_label": "Other Federal securities"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.PROMNOTE.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: Promissory notes",
+        "search_patterns": [
+          "^\\s*Promissory notes\\s*$",
+          "^\\s*Schuldscheindarlehen\\s*$"
+        ],
+        "source_row": 54,
+        "source_label": "Promissory notes"
+      },
+      {
+        "code": "GFB.BORR.BREAKDEPTTYPE.OTHERLOANORDDEPT.M",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: Other loans and ordinary debts",
+        "search_patterns": [
+          "Other loans and ordinary debts",
+          "Sonstige Darlehen und gewöhnliche Schulden"
+        ],
+        "source_row": 56,
+        "source_label": "Other loans and ordinary debts"
+      },
+      {
+        "code": "GFB.BORR.OWNHOLD.M",
+        "description": "Gross Borrowing Requirement: Own holdings",
+        "search_patterns": [
+          "^\\s*Own holdings\\s*$",
+          "^\\s*Eigenbestand\\s*$"
+        ],
+        "source_row": 91,
+        "source_label": "Own holdings"
+      },
+      {
+        "code": "GFB.BORR.OWNHOLD.CONVFEDSEC.M",
+        "description": "Gross Borrowing Requirement: Own holdings: Conventional Federal securities",
+        "search_patterns": [
+          "^\\s*Conventional Federal securities\\s*$",
+          "^\\s*Konventionelle Bundeswertpapiere\\s*$"
+        ],
+        "source_row": 92,
+        "source_label": "Conventional Federal securities"
+      },
+      {
+        "code": "GFB.BORR.OWNHOLD.30YFEDBOND.M",
+        "description": "Gross Borrowing Requirement: Own holdings: 30-year Federal bonds",
+        "search_patterns": [
+          "^\\s*30-year Federal bonds\\s*$",
+          "^\\s*30-jährige Bundesanleihen\\s*$"
+        ],
+        "source_row": 93,
+        "source_label": "30-year Federal bonds"
+      },
+      {
+        "code": "GFB.BORR.OWNHOLD.15YFEDBOND.M",
+        "description": "Gross Borrowing Requirement: Own holdings: 15-year Federal bonds",
+        "search_patterns": [
+          "^\\s*15-year Federal bonds\\s*$",
+          "^\\s*15-jährige Bundesanleihen\\s*$"
+        ],
+        "source_row": 94,
+        "source_label": "15-year Federal bonds"
+      },
+      {
+        "code": "GFB.BORR.OWNHOLD.10YFEDBOND.M",
+        "description": "Gross Borrowing Requirement: Own holdings: 10-year Federal bonds",
+        "search_patterns": [
+          "^\\s*10-year Federal bonds\\s*$",
+          "^\\s*10-jährige Bundesanleihen\\s*$"
+        ],
+        "source_row": 95,
+        "source_label": "10-year Federal bonds"
+      },
+      {
+        "code": "GFB.BORR.OWNHOLD.7YFEDBOND.M",
+        "description": "Gross Borrowing Requirement: Own holdings: 7-year Federal bonds",
+        "search_patterns": [
+          "^\\s*7-year Federal bonds\\s*$",
+          "^\\s*7-jährige Bundesanleihen\\s*$"
+        ],
+        "source_row": 96,
+        "source_label": "7-year Federal bonds"
+      },
+      {
+        "code": "GFB.BORR.OWNHOLD.FEDNOTE.M",
+        "description": "Gross Borrowing Requirement: Own holdings: Federal notes",
+        "search_patterns": [
+          "^\\s*Federal notes\\s*$",
+          "^\\s*Bundesobligationen\\s*$"
+        ],
+        "source_row": 97,
+        "source_label": "Federal notes"
+      },
+      {
+        "code": "GFB.BORR.OWNHOLD.FEDTREASNOTE.M",
+        "description": "Gross Borrowing Requirement: Own holdings: Federal Treasury notes",
+        "search_patterns": [
+          "^\\s*Federal Treasury notes\\s*$",
+          "^\\s*Bundesschatzanweisungen\\s*$"
+        ],
+        "source_row": 98,
+        "source_label": "Federal Treasury notes"
+      },
+      {
+        "code": "GFB.BORR.OWNHOLD.TREASDISCPAP.M",
+        "description": "Gross Borrowing Requirement: Own holdings: Treasury discount paper",
+        "search_patterns": [
+          "^\\s*Treasury discount paper\\s*$",
+          "^\\s*Unverzinsliche Schatzanweisungen\\s*$"
+        ],
+        "source_row": 99,
+        "source_label": "Treasury discount paper"
+      },
+      {
+        "code": "GFB.BORR.OWNHOLD.INFFEDSEC.M",
+        "description": "Gross Borrowing Requirement: Own holdings: Inflation-linked Federal securities",
+        "search_patterns": [
+          "^\\s*Inflation-linked Federal securities\\s*$",
+          "^\\s*Inflationsindexierte Bundeswertpapiere\\s*$"
+        ],
+        "source_row": 100,
+        "source_label": "Inflation-linked Federal securities"
+      },
+      {
+        "code": "GFB.BORR.OWNHOLD.GREENFEDSEC.M",
+        "description": "Gross Borrowing Requirement: Own holdings: Green Federal securities",
+        "search_patterns": [
+          "^\\s*Green Federal securities\\s*$",
+          "^\\s*Grüne Bundeswertpapiere\\s*$"
+        ],
+        "source_row": 101,
+        "source_label": "Green Federal securities"
+      },
+      {
+        "code": "GFB.BORR.OWNHOLD.OTHERFEDSEC.M",
+        "description": "Gross Borrowing Requirement: Own holdings: Other Federal securities",
+        "search_patterns": [
+          "^\\s*Other Federal securities\\s*$",
+          "^\\s*Sonstige Bundeswertpapiere\\s*$"
+        ],
+        "source_row": 102,
+        "source_label": "Other Federal securities"
+      },
+      {
+        "code": "GFB.BORR.ESFINVFEDGOVSEC.M",
+        "description": "Gross Borrowing Requirement: ESF investment in federal government securities acc. to sect. 26b (5) StFG",
+        "search_patterns": [
+          "^ESF investment in federal government securities.*26b.*5",
+          "^WSF-Anlage in Bundeswertpapieren.*26b.*5"
+        ],
+        "source_row": 52,
+        "source_label": "ESF investment in federal government securities acc. to sect. 26b (5) StFG"
+      }
+    ]
+  },
+  "redemption_sheet": {
+    "name": "rpgRedemptions",
+    "date_row": 13,
+    "date_column_start": 1,
+    "measures": [
+      {
+        "code": "GFB.REDEM.FINBUDGET.LOANFIN.M",
+        "description": "Redemption Payments: Financing Federal budget, special funds; loan financing FMS & ESF",
+        "search_patterns": [
+          "Financing Federal budget, special funds.*loan financing",
+          "Finanzierungsbedarf.*Bundeshaushalt.*Sondervermögen.*Darlehensfin"
+        ],
+        "source_row": 14,
+        "source_label": "Financing Federal budget, special funds; loan financing FMS & ESF"
+      },
+      {
+        "code": "GFB.REDEM.FINBUDGET.M",
+        "description": "Redemption Payments:Redemption Payments: Financing Federal budget and special funds",
+        "search_patterns": [
+          "^Financing Federal budget and special funds",
+          "^Finanzierungsbedarf Bundeshaushalt und Sondervermögen"
+        ],
+        "source_row": 15,
+        "source_label": "Financing Federal budget and special funds"
+      },
+      {
+        "code": "GFB.REDEM.BREAKPURP.M",
+        "description": "Redemption Payments: Breakdown by purpose",
+        "search_patterns": [
+          "^Breakdown by purpose",
+          "^Gliederung nach Zweck"
+        ],
+        "source_row": 16,
+        "source_label": "Breakdown by purpose"
+      },
+      {
+        "code": "GFB.REDEM.FEDBUDGET.M",
+        "description": "Redemption Payments: Federal budget",
+        "search_patterns": [
+          "^\\s*Federal budget\\s*$",
+          "^\\s*Bundeshaushalt\\s*$"
+        ],
+        "source_row": 17,
+        "source_label": "Federal budget"
+      },
+      {
+        "code": "GFB.REDEM.FINMARKETFUND.M",
+        "description": "Redemption Payments: Financial Market Stabilisation Fund",
+        "search_patterns": [
+          "Financial Market Stabilisation Fund",
+          "Finanzmarktstabilisierungsfonds"
+        ],
+        "source_row": 18,
+        "source_label": "Financial Market Stabilisation Fund"
+      },
+      {
+        "code": "GFB.REDEM.FMSLOANEXP.M",
+        "description": "Redemption Payments: FMS loans for expenses acc. to section 9 (1)  StFG",
+        "search_patterns": [
+          "FMS loans for expenses.*section 9.*1",
+          "FMS-Darlehen für Ausgaben.*§ 9.*1"
+        ],
+        "source_row": 19,
+        "source_label": "FMS loans for expenses acc. to section 9 (1)  StFG"
+      },
+      {
+        "code": "GFB.REDEM.FMSLOANWINDAGE.M",
+        "description": "Redemption Payments: FMS loans for wind-up agencies acc. to section 9 (5)  StFG",
+        "search_patterns": [
+          "FMS loans for wind-up agencies.*section 9.*5",
+          "FMS-Darlehen für Abwicklungsanstalten.*§ 9.*5"
+        ],
+        "source_row": 20,
+        "source_label": "FMS loans for wind-up agencies acc. to section 9 (5)  StFG"
+      },
+      {
+        "code": "GFB.REDEM.INVREDFUND.M",
+        "description": "Redemption Payments: Investment and Redemption Fund",
+        "search_patterns": [
+          "Investment and Redemption Fund",
+          "Investitions- und Tilgungsfonds"
+        ],
+        "source_row": 21,
+        "source_label": "Investment and Redemption Fund"
+      },
+      {
+        "code": "GFB.REDEM.ECONSTABFUND.M",
+        "description": "Redemption Payments: Economic Stabilisation Fund",
+        "search_patterns": [
+          "^Economic Stabilisation Fund\\s*$",
+          "^Wirtschaftsstabilisierungsfonds\\s*$"
+        ],
+        "source_row": 22,
+        "source_label": "Economic Stabilisation Fund"
+      },
+      {
+        "code": "GFB.REDEM.ESFLOANRECAPMEAS.M",
+        "description": "Redemption Payments: ESF loans for recapitalisation measures acc. to section 22 StFG",
+        "search_patterns": [
+          "ESF loans for recapitalisation.*section 22",
+          "WSF-Darlehen für Rekapitalisierung.*§ 22"
+        ],
+        "source_row": 23,
+        "source_label": "ESF loans for recapitalisation measures acc. to section 22 StFG"
+      },
+      {
+        "code": "GFB.REDEM.ESFLOANKFW23.M",
+        "description": "Redemption Payments: ESF loans for KfW acc. to section 23 StFG",
+        "search_patterns": [
+          "ESF loans for KfW.*section 23",
+          "WSF-Darlehen an KfW.*§ 23"
+        ],
+        "source_row": 24,
+        "source_label": "ESF loans for KfW acc. to section 23 StFG"
+      },
+      {
+        "code": "GFB.REDEM.ESFLOANENERGCRIS.M",
+        "description": "Redemption Payments: ESF loans to mitigate consequences of the energy crisis acc. to sect. 26a (1) no. 1-4 StFG",
+        "search_patterns": [
+          "ESF loans.*energy crisis.*26a.*1.*1-4",
+          "WSF-Darlehen.*Energiekrise.*26a.*1.*1-4"
+        ],
+        "source_row": 25,
+        "source_label": "ESF loans to mitigate consequences of the energy crisis acc. to sect. 26a (1) no. 1-4 StFG"
+      },
+      {
+        "code": "GFB.REDEM.ESFLOANKFW26.M",
+        "description": "Redemption Payments: ESF loans to KfW acc. to section 26a (1) no 5 StFG",
+        "search_patterns": [
+          "ESF loans to KfW.*section 26a.*1.*5",
+          "WSF-Darlehen an KfW.*§ 26a.*1.*5"
+        ],
+        "source_row": 26,
+        "source_label": "ESF loans to KfW acc. to section 26a (1) no 5 StFG"
+      },
+      {
+        "code": "GFB.REDEM.SPECFUNDBUND.M",
+        "description": "Redemption Payments: Special Fund for the Bundeswehr",
+        "search_patterns": [
+          "Special Fund for the Bundeswehr",
+          "Sondervermögen Bundeswehr"
+        ],
+        "source_row": 27,
+        "source_label": "Special Fund for the Bundeswehr"
+      },
+      {
+        "code": "GFB.REDEM.RESTRFUND.M",
+        "description": "Redemption Payments: Restructuring Fund",
+        "search_patterns": [
+          "^Restructuring Fund\\s*$",
+          "^Restrukturierungsfonds\\s*$"
+        ],
+        "source_row": 29,
+        "source_label": "Restructuring Fund"
+      },
+      {
+        "code": "GFB.REDEM.HARDCOALEQFUND.M",
+        "description": "Redemption Payments: Hard Coal Equalisation Fund",
+        "search_patterns": [
+          "Hard Coal Equalisation Fund",
+          "Steinkohlefinanzierungsfonds"
+        ],
+        "source_row": 30,
+        "source_label": "Hard Coal Equalisation Fund"
+      },
+      {
+        "code": "GFB.REDEM.FEDRAILFUND.M",
+        "description": "Redemption Payments: Federal Railways Fund",
+        "search_patterns": [
+          "Federal Railways Fund",
+          "Bundeseisenbahnvermögen"
+        ],
+        "source_row": 31,
+        "source_label": "Federal Railways Fund"
+      },
+      {
+        "code": "GFB.REDEM.COMPFUND.M",
+        "description": "Redemption Payments: Compensation Fund",
+        "search_patterns": [
+          "^Compensation Fund\\s*$",
+          "^Ausgleichsfonds\\s*$"
+        ],
+        "source_row": 32,
+        "source_label": "Compensation Fund"
+      },
+      {
+        "code": "GFB.REDEM.REDFUNDLIAB.M",
+        "description": "Redemption Payments: Redemption Fund for Inherited Liabilities",
+        "search_patterns": [
+          "Redemption Fund for Inherited Liabilities",
+          "Erblastentilgungsfonds"
+        ],
+        "source_row": 33,
+        "source_label": "Redemption Fund for Inherited Liabilities"
+      },
+      {
+        "code": "GFB.REDEM.ERPSPECFUND.M",
+        "description": "Redemption Payments: ERP Special Fund",
+        "search_patterns": [
+          "ERP Special Fund",
+          "ERP-Sondervermögen"
+        ],
+        "source_row": 34,
+        "source_label": "ERP Special Fund"
+      },
+      {
+        "code": "GFB.REDEM.GERUNITFUND.M",
+        "description": "Redemption Payments: German Unity Fund",
+        "search_patterns": [
+          "German Unity Fund",
+          "Fonds Deutsche Einheit"
+        ],
+        "source_row": 35,
+        "source_label": "German Unity Fund"
+      },
+      {
+        "code": "GFB.REDEM.EQUALBURFUND.M",
+        "description": "Redemption Payments: Equalisation of Burdens Fund",
+        "search_patterns": [
+          "Equalisation of Burdens Fund",
+          "Lastenausgleichsfonds"
+        ],
+        "source_row": 36,
+        "source_label": "Equalisation of Burdens Fund"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.M",
+        "description": "Redemption Payments: Breakdown by debt type",
+        "search_patterns": [
+          "^Breakdown by debt type\\s*$",
+          "^Gliederung nach Schuldarten\\s*$"
+        ],
+        "source_row": 37,
+        "source_label": "Breakdown by debt type"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.FEDSEC.M",
+        "description": "Redemption Payments: Breakdown by debt type: Federal securities",
+        "search_patterns": [
+          "^\\s*Federal securities\\s*$",
+          "^\\s*Bundeswertpapiere\\s*$"
+        ],
+        "source_row": 38,
+        "source_label": "Federal securities"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.CONVFEDSEC.M",
+        "description": "Redemption Payments: Breakdown by debt type: Conventional Federal securities",
+        "search_patterns": [
+          "Conventional Federal securities",
+          "Konventionelle Bundeswertpapiere"
+        ],
+        "source_row": 39,
+        "source_label": "Conventional Federal securities"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.FEDBOND.M",
+        "description": "Redemption Payments: Breakdown by debt type: Federal bonds",
+        "search_patterns": [
+          "^\\s*Federal bonds\\s*$",
+          "^\\s*Bundesanleihen\\s*$"
+        ],
+        "source_row": 40,
+        "source_label": "Federal bonds"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.30YFEDBOND.M",
+        "description": "Redemption Payments: Breakdown by debt type: 30-year Federal bonds",
+        "search_patterns": [
+          "30-year Federal bonds",
+          "30-jährige Bundesanleihen"
+        ],
+        "source_row": 41,
+        "source_label": "30-year Federal bonds"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.15YFEDBOND.M",
+        "description": "Redemption Payments: Breakdown by debt type: 15-year Federal bonds",
+        "search_patterns": [
+          "15-year Federal bonds",
+          "15-jährige Bundesanleihen"
+        ],
+        "source_row": 42,
+        "source_label": "15-year Federal bonds"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.10YFEDBOND.M",
+        "description": "Redemption Payments: Breakdown by debt type: 10-year Federal bonds",
+        "search_patterns": [
+          "10-year Federal bonds",
+          "10-jährige Bundesanleihen"
+        ],
+        "source_row": 43,
+        "source_label": "10-year Federal bonds"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.7YFEDBOND.M",
+        "description": "Redemption Payments: Breakdown by debt type: 7-year Federal bonds",
+        "search_patterns": [
+          "7-year Federal bonds",
+          "7-jährige Bundesanleihen"
+        ],
+        "source_row": 44,
+        "source_label": "7-year Federal bonds"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.FEDNOTE.M",
+        "description": "Redemption Payments: Breakdown by debt type: Federal notes",
+        "search_patterns": [
+          "^\\s*Federal notes\\s*$",
+          "^\\s*Bundesobligationen\\s*$"
+        ],
+        "source_row": 45,
+        "source_label": "Federal notes"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.FEDTREASNOTE.M",
+        "description": "Redemption Payments: Breakdown by debt type: Federal Treasury notes",
+        "search_patterns": [
+          "Federal Treasury notes",
+          "Bundesschatzanweisungen"
+        ],
+        "source_row": 46,
+        "source_label": "Federal Treasury notes"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.TREASDISCPAP.M",
+        "description": "Redemption Payments: Breakdown by debt type: Treasury discount paper",
+        "search_patterns": [
+          "Treasury discount paper",
+          "Unverzinsliche Schatzanweisungen"
+        ],
+        "source_row": 47,
+        "source_label": "Treasury discount paper"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.INFFEDSEC.M",
+        "description": "Redemption Payments: Breakdown by debt type: Inflation-linked Federal securities",
+        "search_patterns": [
+          "Inflation-linked Federal securities",
+          "Inflationsindexierte Bundeswertpapiere"
+        ],
+        "source_row": 48,
+        "source_label": "Inflation-linked Federal securities"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.GREENFEDSEC.M",
+        "description": "Redemption Payments: Breakdown by debt type: Green Federal securities",
+        "search_patterns": [
+          "Green Federal securities",
+          "Grüne Bundeswertpapiere"
+        ],
+        "source_row": 49,
+        "source_label": "Green Federal securities"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.SUPSECFEDGOV.M",
+        "description": "Redemption Payments: Breakdown by debt type: Supplementary securities issued by the federal government",
+        "search_patterns": [
+          "Supplementary securities issued by the federal government",
+          "Ergänzungswertpapiere des Bundes"
+        ],
+        "source_row": 50,
+        "source_label": "Supplementary securities issued by the federal government"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.LOANSUPFEDGOV.M",
+        "description": "Redemption Payments: Breakdown by debt type: Loans from suppl. issues by the federal government for the ESF acc. to sect. 26b StFG",
+        "search_patterns": [
+          "Loans from suppl.*federal government for the ESF.*26b",
+          "Darlehen aus Ergänzungsemissionen.*WSF.*26b"
+        ],
+        "source_row": 51,
+        "source_label": "Loans from suppl. issues by the federal government for the ESF acc. to sect. 26b StFG"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.ESFINVFEDGOVSEC.M",
+        "description": "Redemption Payments: Breakdown by debt type: ESF investment in federal government securities acc. to sect. 26b (5) StFG",
+        "search_patterns": [
+          "ESF investment in federal government securities.*26b.*5",
+          "WSF-Anlage in Bundeswertpapieren.*26b.*5"
+        ],
+        "source_row": 52,
+        "source_label": "ESF investment in federal government securities acc. to sect. 26b (5) StFG"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.OTHERFEDSEC.M",
+        "description": "Redemption Payments: Breakdown by debt type: Other Federal securities",
+        "search_patterns": [
+          "Other Federal securities",
+          "Sonstige Bundeswertpapiere"
+        ],
+        "source_row": 53,
+        "source_label": "Other Federal securities"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.PROMNOTE.M",
+        "description": "Redemption Payments: Breakdown by debt type: Promissory notes",
+        "search_patterns": [
+          "^\\s*Promissory notes\\s*$",
+          "^\\s*Schuldscheindarlehen\\s*$"
+        ],
+        "source_row": 54,
+        "source_label": "Promissory notes"
+      },
+      {
+        "code": "GFB.REDEM.BREAKDEPTTYPE.OTHERLOANORDDEPT.M",
+        "description": "Redemption Payments: Breakdown by debt type: Other loans and ordinary debts",
+        "search_patterns": [
+          "Other loans and ordinary debts",
+          "Sonstige Darlehen und gewöhnliche Schulden"
+        ],
+        "source_row": 56,
+        "source_label": "Other loans and ordinary debts"
+      },
+      {
+        "code": "GFB.REDEM.OWNHOLD.M",
+        "description": "Redemption Payments: Own holdings",
+        "search_patterns": [
+          "^\\s*Own holdings\\s*$",
+          "^\\s*Eigenbestand\\s*$"
+        ],
+        "source_row": 91,
+        "source_label": "Own holdings"
+      },
+      {
+        "code": "GFB.REDEM.OWNHOLD.CONVFEDSEC.M",
+        "description": "Redemption Payments: Own holdings: Conventional Federal securities",
+        "search_patterns": [
+          "^\\s*Conventional Federal securities\\s*$",
+          "^\\s*Konventionelle Bundeswertpapiere\\s*$"
+        ],
+        "source_row": 92,
+        "source_label": "Conventional Federal securities"
+      },
+      {
+        "code": "GFB.REDEM.OWNHOLD.30YFEDBOND.M",
+        "description": "Redemption Payments: Own holdings: 30-year Federal bonds",
+        "search_patterns": [
+          "^\\s*30-year Federal bonds\\s*$",
+          "^\\s*30-jährige Bundesanleihen\\s*$"
+        ],
+        "source_row": 93,
+        "source_label": "30-year Federal bonds"
+      },
+      {
+        "code": "GFB.REDEM.OWNHOLD.15YFEDBOND.M",
+        "description": "Redemption Payments: Own holdings: 15-year Federal bonds",
+        "search_patterns": [
+          "^\\s*15-year Federal bonds\\s*$",
+          "^\\s*15-jährige Bundesanleihen\\s*$"
+        ],
+        "source_row": 94,
+        "source_label": "15-year Federal bonds"
+      },
+      {
+        "code": "GFB.REDEM.OWNHOLD.10YFEDBOND.M",
+        "description": "Redemption Payments: Own holdings: 10-year Federal bonds",
+        "search_patterns": [
+          "^\\s*10-year Federal bonds\\s*$",
+          "^\\s*10-jährige Bundesanleihen\\s*$"
+        ],
+        "source_row": 95,
+        "source_label": "10-year Federal bonds"
+      },
+      {
+        "code": "GFB.REDEM.OWNHOLD.7YFEDBOND.M",
+        "description": "Redemption Payments: Own holdings: 7-year Federal bonds",
+        "search_patterns": [
+          "^\\s*7-year Federal bonds\\s*$",
+          "^\\s*7-jährige Bundesanleihen\\s*$"
+        ],
+        "source_row": 96,
+        "source_label": "7-year Federal bonds"
+      },
+      {
+        "code": "GFB.REDEM.OWNHOLD.FEDNOTE.M",
+        "description": "Redemption Payments: Own holdings: Federal notes",
+        "search_patterns": [
+          "^\\s*Federal notes\\s*$",
+          "^\\s*Bundesobligationen\\s*$"
+        ],
+        "source_row": 97,
+        "source_label": "Federal notes"
+      },
+      {
+        "code": "GFB.REDEM.OWNHOLD.FEDTREASNOTE.M",
+        "description": "Redemption Payments: Own holdings: Federal Treasury notes",
+        "search_patterns": [
+          "^\\s*Federal Treasury notes\\s*$",
+          "^\\s*Bundesschatzanweisungen\\s*$"
+        ],
+        "source_row": 98,
+        "source_label": "Federal Treasury notes"
+      },
+      {
+        "code": "GFB.REDEM.OWNHOLD.TREASDISCPAP.M",
+        "description": "Redemption Payments: Own holdings: Treasury discount paper",
+        "search_patterns": [
+          "^\\s*Treasury discount paper\\s*$",
+          "^\\s*Unverzinsliche Schatzanweisungen\\s*$"
+        ],
+        "source_row": 99,
+        "source_label": "Treasury discount paper"
+      },
+      {
+        "code": "GFB.REDEM.OWNHOLD.INFFEDSEC.M",
+        "description": "Redemption Payments: Own holdings: Inflation-linked Federal securities",
+        "search_patterns": [
+          "^\\s*Inflation-linked Federal securities\\s*$",
+          "^\\s*Inflationsindexierte Bundeswertpapiere\\s*$"
+        ],
+        "source_row": 100,
+        "source_label": "Inflation-linked Federal securities"
+      },
+      {
+        "code": "GFB.REDEM.OWNHOLD.GREENFEDSEC.M",
+        "description": "Redemption Payments: Own holdings: Green Federal securities",
+        "search_patterns": [
+          "^\\s*Green Federal securities\\s*$",
+          "^\\s*Grüne Bundeswertpapiere\\s*$"
+        ],
+        "source_row": 101,
+        "source_label": "Green Federal securities"
+      },
+      {
+        "code": "GFB.REDEM.OWNHOLD.OTHERFEDSEC.M",
+        "description": "Redemption Payments: Own holdings: Other Federal securities",
+        "search_patterns": [
+          "^\\s*Other Federal securities\\s*$",
+          "^\\s*Sonstige Bundeswertpapiere\\s*$"
+        ],
+        "source_row": 102,
+        "source_label": "Other Federal securities"
+      },
+      {
+        "code": "GFB.REDEM.ESFINVFEDGOVSEC.M",
+        "description": "Redemption Payments: ESF investment in federal government securities acc. to sect. 26b (5) StFG",
+        "search_patterns": [
+          "^ESF investment in federal government securities.*26b.*5",
+          "^WSF-Anlage in Bundeswertpapieren.*26b.*5"
+        ],
+        "source_row": 52,
+        "source_label": "ESF investment in federal government securities acc. to sect. 26b (5) StFG"
+      }
+    ]
+  }
+}
