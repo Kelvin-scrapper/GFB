@@ -274,16 +274,23 @@ def list_output_files():
     """List generated output files"""
     print("Generated output files:")
     print("-" * 30)
-    
+
     output_files = []
-    for file in os.listdir('.'):
-        if file.startswith('GFB_DATA_') and file.endswith('.xlsx'):
-            output_files.append(file)
-    
+
+    # Check both current directory and output folder
+    search_locations = ['.', 'output']
+
+    for location in search_locations:
+        if os.path.exists(location):
+            for file in os.listdir(location):
+                if file.startswith('GFB_DATA_') and file.endswith('.xlsx'):
+                    file_path = os.path.join(location, file)
+                    output_files.append(file_path)
+
     if output_files:
         # Sort by modification time (newest first)
         output_files.sort(key=lambda f: os.path.getmtime(f), reverse=True)
-        
+
         for i, file in enumerate(output_files, 1):
             mod_time = datetime.fromtimestamp(os.path.getmtime(file)).strftime('%Y-%m-%d %H:%M:%S')
             file_size = os.path.getsize(file) / 1024  # KB
@@ -291,7 +298,7 @@ def list_output_files():
             print(f"    Created: {mod_time}, Size: {file_size:.1f} KB")
     else:
         print("No output files found.")
-    
+
     print()
 
 def main():

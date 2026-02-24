@@ -11,6 +11,7 @@ The JSON config stores WHERE to find each measure in the source Excel.
 import pandas as pd
 import os
 import json
+import re
 from datetime import datetime
 import numpy as np
 
@@ -32,6 +33,46 @@ def load_config(config_file="gfb_config.json"):
     print(f"  Source: {config.get('source_file', 'unknown')}")
 
     return config
+
+
+def find_row_by_pattern(df, search_patterns, start_row=0, parent_section=None):
+    """
+    Dynamically find a row in the DataFrame by searching for text patterns.
+    This makes extraction resilient to row shifts in the source Excel.
+
+    Args:
+        df: DataFrame to search
+        search_patterns: List of regex patterns to match against column A
+        start_row: Row index to start searching from
+        parent_section: If set, requires this text to appear in a row above the match
+                        (used to disambiguate duplicate labels like sub-items under
+                        'Breakdown by debt type' vs 'Own holdings')
+
+    Returns:
+        Row index or None if not found
+    """
+    for row_idx in range(start_row, len(df)):
+        cell_value = str(df.iloc[row_idx, 0]).strip() if pd.notna(df.iloc[row_idx, 0]) else ""
+        if not cell_value:
+            continue
+
+        for pattern in search_patterns:
+            if re.search(pattern, cell_value, re.IGNORECASE):
+                if parent_section:
+                    parent_found = False
+                    for prev_idx in range(row_idx - 1, max(start_row - 1, row_idx - 16, -1), -1):
+                        prev_value = str(df.iloc[prev_idx, 0]).strip() if pd.notna(df.iloc[prev_idx, 0]) else ""
+                        if prev_value and parent_section.lower() in prev_value.lower():
+                            parent_found = True
+                            break
+                    if parent_found:
+                        return row_idx
+                    else:
+                        break  # wrong section, keep searching next rows
+                else:
+                    return row_idx
+
+    return None
 
 
 def format_number(value):
@@ -96,43 +137,61 @@ def extract_gfb_data_with_config(source_file, config):
     print(f"   Found {len(dates)} date columns")
     print(f"   Date range: {dates[0] if dates else 'N/A'} to {dates[-1] if dates else 'N/A'}")
 
-    # Extract borrowing data using config mappings
-    print("\n3. Extracting borrowing data using config mappings...")
+    # Extract borrowing data using context-aware search
+    print("\n3. Extracting borrowing data (context-aware search)...")
     borrowing_data = []
+    data_start_row = borr_date_row + 1
 
     for i, measure in enumerate(borr_config['measures'], 1):
-        row_idx = measure['source_row']
+        # Dynamic search: find row by pattern, fall back to source_row hint
+        patterns = measure.get('search_patterns', [])
+        parent_section = measure.get('parent_section', None)
+        row_idx = None
+
+        if patterns:
+            row_idx = find_row_by_pattern(borrowing_df, patterns, start_row=data_start_row, parent_section=parent_section)
+
+        # Fall back to config hint if dynamic search fails
+        if row_idx is None and measure.get('source_row') is not None:
+            row_idx = measure['source_row']
 
         if row_idx is not None and row_idx < len(borrowing_df):
             row_data = borrowing_df.iloc[row_idx, 1:len(dates)+1].values
             borrowing_data.append(row_data)
 
-            if i <= 5 or i > 50:  # Show first 5 and last few
-                label = measure['source_label'][:50] if measure['source_label'] else "N/A"
-                print(f"   Col {i:2d}: Row {row_idx+1:3d} -> {label}")
+            actual_label = str(borrowing_df.iloc[row_idx, 0]).strip() if pd.notna(borrowing_df.iloc[row_idx, 0]) else "N/A"
+            if i <= 5 or i > 50:
+                print(f"   Col {i:2d}: Row {row_idx+1:3d} -> {actual_label[:50]}")
         else:
-            # No mapping found - use NaN
             borrowing_data.append([np.nan] * len(dates))
-            print(f"   Col {i:2d}: NOT MAPPED -> Using NaN")
+            print(f"   Col {i:2d}: NOT FOUND -> {measure['code']}")
 
-    # Extract redemption data using config mappings
-    print("\n4. Extracting redemption data using config mappings...")
+    # Extract redemption data using context-aware search
+    print("\n4. Extracting redemption data (context-aware search)...")
     redemption_data = []
+    redem_data_start_row = redem_date_row + 1
 
     for i, measure in enumerate(redem_config['measures'], 1):
-        row_idx = measure['source_row']
+        patterns = measure.get('search_patterns', [])
+        parent_section = measure.get('parent_section', None)
+        row_idx = None
+
+        if patterns:
+            row_idx = find_row_by_pattern(redemption_df, patterns, start_row=redem_data_start_row, parent_section=parent_section)
+
+        if row_idx is None and measure.get('source_row') is not None:
+            row_idx = measure['source_row']
 
         if row_idx is not None and row_idx < len(redemption_df):
             row_data = redemption_df.iloc[row_idx, 1:len(dates)+1].values
             redemption_data.append(row_data)
 
-            if i <= 5 or i > 50:  # Show first 5 and last few
-                label = measure['source_label'][:50] if measure['source_label'] else "N/A"
-                print(f"   Col {i:2d}: Row {row_idx+1:3d} -> {label}")
+            actual_label = str(redemption_df.iloc[row_idx, 0]).strip() if pd.notna(redemption_df.iloc[row_idx, 0]) else "N/A"
+            if i <= 5 or i > 50:
+                print(f"   Col {i:2d}: Row {row_idx+1:3d} -> {actual_label[:50]}")
         else:
-            # No mapping found - use NaN
             redemption_data.append([np.nan] * len(dates))
-            print(f"   Col {i:2d}: NOT MAPPED -> Using NaN")
+            print(f"   Col {i:2d}: NOT FOUND -> {measure['code']}")
 
     # Prepare output headers (fixed order from config)
     print("\n5. Preparing output structure...")

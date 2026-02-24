@@ -321,9 +321,9 @@ def create_measure_definitions():
         },
         {
             "code": "GFB.BORR.BREAKDEPTTYPE.15YFEDBOND.M",
-            "description": "Gross Borrowing Requirement: Breakdown by debt type: 15-year Federal bonds",
+            "description": "Gross Borrowing Requirement: Breakdown by debt type: 15-/20-year Federal bonds",
             "search_patterns": [
-                r"15-year Federal bonds",
+                r"15-(?:/20-)?year Federal bonds",
                 r"15-jährige Bundesanleihen"
             ]
         },
@@ -459,9 +459,9 @@ def create_measure_definitions():
         },
         {
             "code": "GFB.BORR.OWNHOLD.15YFEDBOND.M",
-            "description": "Gross Borrowing Requirement: Own holdings: 15-year Federal bonds",
+            "description": "Gross Borrowing Requirement: Own holdings: 15-/20-year Federal bonds",
             "search_patterns": [
-                r"^\s*15-year Federal bonds\s*$",
+                r"^\s*15-(?:/20-)?year Federal bonds\s*$",
                 r"^\s*15-jährige Bundesanleihen\s*$"
             ],
             "parent_section": "Own holdings"
@@ -618,13 +618,16 @@ def build_config(source_file):
             label = None
             print(f"   {i:2d}. NOT FOUND: {measure['code']}")
 
-        borrowing_mappings.append({
+        mapping = {
             "code": measure["code"],
             "description": measure["description"],
             "search_patterns": measure["search_patterns"],
             "source_row": row_idx,
             "source_label": label
-        })
+        }
+        if "parent_section" in measure:
+            mapping["parent_section"] = measure["parent_section"]
+        borrowing_mappings.append(mapping)
 
     print("\n5. Mapping redemption measures to source rows...")
     redemption_mappings = []
@@ -646,13 +649,16 @@ def build_config(source_file):
             label = None
             print(f"   {i:2d}. NOT FOUND: {measure['code']}")
 
-        redemption_mappings.append({
+        mapping = {
             "code": measure["code"],
             "description": measure["description"],
             "search_patterns": measure["search_patterns"],
             "source_row": row_idx,
             "source_label": label
-        })
+        }
+        if "parent_section" in measure:
+            mapping["parent_section"] = measure["parent_section"]
+        redemption_mappings.append(mapping)
 
     # Create config
     config = {

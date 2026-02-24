@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "created": "2026-02-04T14:37:33.891062",
+  "created": "2026-02-24T11:14:43.489476",
   "source_file": "schuldenbericht_en.xlsx",
   "borrowing_sheet": {
     "name": "rpgBorrowing",
@@ -279,13 +279,13 @@
       },
       {
         "code": "GFB.BORR.BREAKDEPTTYPE.15YFEDBOND.M",
-        "description": "Gross Borrowing Requirement: Breakdown by debt type: 15-year Federal bonds",
+        "description": "Gross Borrowing Requirement: Breakdown by debt type: 15-/20-year Federal bonds",
         "search_patterns": [
-          "15-year Federal bonds",
+          "15-(?:/20-)?year Federal bonds",
           "15-jährige Bundesanleihen"
         ],
         "source_row": 42,
-        "source_label": "15-year Federal bonds"
+        "source_label": "15-/20-year Federal bonds"
       },
       {
         "code": "GFB.BORR.BREAKDEPTTYPE.10YFEDBOND.M",
@@ -424,7 +424,7 @@
           "^\\s*Own holdings\\s*$",
           "^\\s*Eigenbestand\\s*$"
         ],
-        "source_row": 91,
+        "source_row": 92,
         "source_label": "Own holdings"
       },
       {
@@ -434,8 +434,9 @@
           "^\\s*Conventional Federal securities\\s*$",
           "^\\s*Konventionelle Bundeswertpapiere\\s*$"
         ],
-        "source_row": 92,
-        "source_label": "Conventional Federal securities"
+        "source_row": 93,
+        "source_label": "Conventional Federal securities",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.BORR.OWNHOLD.30YFEDBOND.M",
@@ -444,18 +445,20 @@
           "^\\s*30-year Federal bonds\\s*$",
           "^\\s*30-jährige Bundesanleihen\\s*$"
         ],
-        "source_row": 93,
-        "source_label": "30-year Federal bonds"
+        "source_row": 94,
+        "source_label": "30-year Federal bonds",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.BORR.OWNHOLD.15YFEDBOND.M",
-        "description": "Gross Borrowing Requirement: Own holdings: 15-year Federal bonds",
+        "description": "Gross Borrowing Requirement: Own holdings: 15-/20-year Federal bonds",
         "search_patterns": [
-          "^\\s*15-year Federal bonds\\s*$",
+          "^\\s*15-(?:/20-)?year Federal bonds\\s*$",
           "^\\s*15-jährige Bundesanleihen\\s*$"
         ],
-        "source_row": 94,
-        "source_label": "15-year Federal bonds"
+        "source_row": 95,
+        "source_label": "15-/20-year Federal bonds",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.BORR.OWNHOLD.10YFEDBOND.M",
@@ -464,8 +467,9 @@
           "^\\s*10-year Federal bonds\\s*$",
           "^\\s*10-jährige Bundesanleihen\\s*$"
         ],
-        "source_row": 95,
-        "source_label": "10-year Federal bonds"
+        "source_row": 96,
+        "source_label": "10-year Federal bonds",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.BORR.OWNHOLD.7YFEDBOND.M",
@@ -474,8 +478,9 @@
           "^\\s*7-year Federal bonds\\s*$",
           "^\\s*7-jährige Bundesanleihen\\s*$"
         ],
-        "source_row": 96,
-        "source_label": "7-year Federal bonds"
+        "source_row": 97,
+        "source_label": "7-year Federal bonds",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.BORR.OWNHOLD.FEDNOTE.M",
@@ -484,8 +489,9 @@
           "^\\s*Federal notes\\s*$",
           "^\\s*Bundesobligationen\\s*$"
         ],
-        "source_row": 97,
-        "source_label": "Federal notes"
+        "source_row": 98,
+        "source_label": "Federal notes",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.BORR.OWNHOLD.FEDTREASNOTE.M",
@@ -494,8 +500,9 @@
           "^\\s*Federal Treasury notes\\s*$",
           "^\\s*Bundesschatzanweisungen\\s*$"
         ],
-        "source_row": 98,
-        "source_label": "Federal Treasury notes"
+        "source_row": 99,
+        "source_label": "Federal Treasury notes",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.BORR.OWNHOLD.TREASDISCPAP.M",
@@ -504,8 +511,9 @@
           "^\\s*Treasury discount paper\\s*$",
           "^\\s*Unverzinsliche Schatzanweisungen\\s*$"
         ],
-        "source_row": 99,
-        "source_label": "Treasury discount paper"
+        "source_row": 100,
+        "source_label": "Treasury discount paper",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.BORR.OWNHOLD.INFFEDSEC.M",
@@ -514,8 +522,9 @@
           "^\\s*Inflation-linked Federal securities\\s*$",
           "^\\s*Inflationsindexierte Bundeswertpapiere\\s*$"
         ],
-        "source_row": 100,
-        "source_label": "Inflation-linked Federal securities"
+        "source_row": 101,
+        "source_label": "Inflation-linked Federal securities",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.BORR.OWNHOLD.GREENFEDSEC.M",
@@ -524,8 +533,9 @@
           "^\\s*Green Federal securities\\s*$",
           "^\\s*Grüne Bundeswertpapiere\\s*$"
         ],
-        "source_row": 101,
-        "source_label": "Green Federal securities"
+        "source_row": 102,
+        "source_label": "Green Federal securities",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.BORR.OWNHOLD.OTHERFEDSEC.M",
@@ -534,8 +544,9 @@
           "^\\s*Other Federal securities\\s*$",
           "^\\s*Sonstige Bundeswertpapiere\\s*$"
         ],
-        "source_row": 102,
-        "source_label": "Other Federal securities"
+        "source_row": 103,
+        "source_label": "Other Federal securities",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.BORR.ESFINVFEDGOVSEC.M",
@@ -826,13 +837,13 @@
       },
       {
         "code": "GFB.REDEM.BREAKDEPTTYPE.15YFEDBOND.M",
-        "description": "Redemption Payments: Breakdown by debt type: 15-year Federal bonds",
+        "description": "Redemption Payments: Breakdown by debt type: 15-/20-year Federal bonds",
         "search_patterns": [
-          "15-year Federal bonds",
+          "15-(?:/20-)?year Federal bonds",
           "15-jährige Bundesanleihen"
         ],
         "source_row": 42,
-        "source_label": "15-year Federal bonds"
+        "source_label": "15-/20-year Federal bonds"
       },
       {
         "code": "GFB.REDEM.BREAKDEPTTYPE.10YFEDBOND.M",
@@ -971,7 +982,7 @@
           "^\\s*Own holdings\\s*$",
           "^\\s*Eigenbestand\\s*$"
         ],
-        "source_row": 91,
+        "source_row": 92,
         "source_label": "Own holdings"
       },
       {
@@ -981,8 +992,9 @@
           "^\\s*Conventional Federal securities\\s*$",
           "^\\s*Konventionelle Bundeswertpapiere\\s*$"
         ],
-        "source_row": 92,
-        "source_label": "Conventional Federal securities"
+        "source_row": 93,
+        "source_label": "Conventional Federal securities",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.REDEM.OWNHOLD.30YFEDBOND.M",
@@ -991,18 +1003,20 @@
           "^\\s*30-year Federal bonds\\s*$",
           "^\\s*30-jährige Bundesanleihen\\s*$"
         ],
-        "source_row": 93,
-        "source_label": "30-year Federal bonds"
+        "source_row": 94,
+        "source_label": "30-year Federal bonds",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.REDEM.OWNHOLD.15YFEDBOND.M",
-        "description": "Redemption Payments: Own holdings: 15-year Federal bonds",
+        "description": "Redemption Payments: Own holdings: 15-/20-year Federal bonds",
         "search_patterns": [
-          "^\\s*15-year Federal bonds\\s*$",
+          "^\\s*15-(?:/20-)?year Federal bonds\\s*$",
           "^\\s*15-jährige Bundesanleihen\\s*$"
         ],
-        "source_row": 94,
-        "source_label": "15-year Federal bonds"
+        "source_row": 95,
+        "source_label": "15-/20-year Federal bonds",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.REDEM.OWNHOLD.10YFEDBOND.M",
@@ -1011,8 +1025,9 @@
           "^\\s*10-year Federal bonds\\s*$",
           "^\\s*10-jährige Bundesanleihen\\s*$"
         ],
-        "source_row": 95,
-        "source_label": "10-year Federal bonds"
+        "source_row": 96,
+        "source_label": "10-year Federal bonds",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.REDEM.OWNHOLD.7YFEDBOND.M",
@@ -1021,8 +1036,9 @@
           "^\\s*7-year Federal bonds\\s*$",
           "^\\s*7-jährige Bundesanleihen\\s*$"
         ],
-        "source_row": 96,
-        "source_label": "7-year Federal bonds"
+        "source_row": 97,
+        "source_label": "7-year Federal bonds",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.REDEM.OWNHOLD.FEDNOTE.M",
@@ -1031,8 +1047,9 @@
           "^\\s*Federal notes\\s*$",
           "^\\s*Bundesobligationen\\s*$"
         ],
-        "source_row": 97,
-        "source_label": "Federal notes"
+        "source_row": 98,
+        "source_label": "Federal notes",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.REDEM.OWNHOLD.FEDTREASNOTE.M",
@@ -1041,8 +1058,9 @@
           "^\\s*Federal Treasury notes\\s*$",
           "^\\s*Bundesschatzanweisungen\\s*$"
         ],
-        "source_row": 98,
-        "source_label": "Federal Treasury notes"
+        "source_row": 99,
+        "source_label": "Federal Treasury notes",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.REDEM.OWNHOLD.TREASDISCPAP.M",
@@ -1051,8 +1069,9 @@
           "^\\s*Treasury discount paper\\s*$",
           "^\\s*Unverzinsliche Schatzanweisungen\\s*$"
         ],
-        "source_row": 99,
-        "source_label": "Treasury discount paper"
+        "source_row": 100,
+        "source_label": "Treasury discount paper",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.REDEM.OWNHOLD.INFFEDSEC.M",
@@ -1061,8 +1080,9 @@
           "^\\s*Inflation-linked Federal securities\\s*$",
           "^\\s*Inflationsindexierte Bundeswertpapiere\\s*$"
         ],
-        "source_row": 100,
-        "source_label": "Inflation-linked Federal securities"
+        "source_row": 101,
+        "source_label": "Inflation-linked Federal securities",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.REDEM.OWNHOLD.GREENFEDSEC.M",
@@ -1071,8 +1091,9 @@
           "^\\s*Green Federal securities\\s*$",
           "^\\s*Grüne Bundeswertpapiere\\s*$"
         ],
-        "source_row": 101,
-        "source_label": "Green Federal securities"
+        "source_row": 102,
+        "source_label": "Green Federal securities",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.REDEM.OWNHOLD.OTHERFEDSEC.M",
@@ -1081,8 +1102,9 @@
           "^\\s*Other Federal securities\\s*$",
           "^\\s*Sonstige Bundeswertpapiere\\s*$"
         ],
-        "source_row": 102,
-        "source_label": "Other Federal securities"
+        "source_row": 103,
+        "source_label": "Other Federal securities",
+        "parent_section": "Own holdings"
       },
       {
         "code": "GFB.REDEM.ESFINVFEDGOVSEC.M",
