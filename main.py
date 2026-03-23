@@ -11,6 +11,35 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+def get_chrome_version():
+    """Detect the installed Chrome major version number."""
+    import subprocess, re
+    candidates = [
+        # Windows
+        r"C:\Program Files\Google\Chrome\Application\chrome.exe",
+        r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
+        # Linux
+        "google-chrome",
+        "google-chrome-stable",
+        "chromium-browser",
+        "chromium",
+        # macOS
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    ]
+    for candidate in candidates:
+        try:
+            result = subprocess.run(
+                [candidate, "--version"],
+                capture_output=True, text=True, timeout=5
+            )
+            match = re.search(r"(\d+)\.\d+\.\d+", result.stdout)
+            if match:
+                return int(match.group(1))
+        except Exception:
+            continue
+    return None
+
+
 def download_excel_from_website(url, download_folder="./downloads", search_keywords=None):
     """
     Universal Excel file downloader - works with any website
@@ -46,19 +75,33 @@ def download_excel_from_website(url, download_folder="./downloads", search_keywo
     }
     options.add_experimental_option("prefs", prefs)
     
+    chrome_version = get_chrome_version()
+    if chrome_version:
+        print(f"Detected Chrome version: {chrome_version}")
+    else:
+        print("Could not detect Chrome version, proceeding without version pinning")
+
     driver = None
     try:
-        driver = uc.Chrome(options=options, version_main=144, use_subprocess=False)
+        kwargs = {"options": options, "use_subprocess": False}
+        if chrome_version:
+            kwargs["version_main"] = chrome_version
+        driver = uc.Chrome(**kwargs)
     except Exception as e:
         print(f"Failed with options, trying basic setup: {e}")
         try:
-            options = uc.ChromeOptions()
-            options.add_argument("--headless")
-            driver = uc.Chrome(options=options, version_main=144, use_subprocess=False)
+            options2 = uc.ChromeOptions()
+            options2.add_argument("--headless")
+            kwargs2 = {"options": options2, "use_subprocess": False}
+            if chrome_version:
+                kwargs2["version_main"] = chrome_version
+            driver = uc.Chrome(**kwargs2)
         except Exception as e2:
             print(f"Also failed with basic setup: {e2}")
             print("Trying without version specification...")
-            driver = uc.Chrome(options=options, use_subprocess=False)
+            options3 = uc.ChromeOptions()
+            options3.add_argument("--headless")
+            driver = uc.Chrome(options=options3, use_subprocess=False)
     
     try:
         print(f"Going to website: {url}")
